@@ -20,8 +20,8 @@ class Solution {
                     result.add(Arrays.asList(nums[k], nums[i], nums[j]));
                     while(i<j && nums[i]==nums[i+1]) i++;
                     // while(i<j && nums[j]==nums[j-1]) j--;
-                    i++;
-                    j--;            
+                     i++;
+                    // j--;            
 
                 }
                 else if(nums[k]+nums[i]+nums[j]>0){
