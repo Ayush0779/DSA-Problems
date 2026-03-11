@@ -15,9 +15,14 @@ public class Solution {
         ListNode f=head;
         boolean result = false;
 
-        while(s!=null && f!=null && f.next!=null){
+        while(s!=null && f!=null ){
             s=s.next;
-            f=f.next.next;
+            if(f.next==null){
+                f=null;
+            }
+            else{
+                f=f.next.next;
+            }
             if(f!=null && s==f){
                 result=true;
                 break;
