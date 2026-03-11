@@ -19,7 +19,7 @@ class Solution {
                 if(nums[k]+nums[i]+nums[j]==0){
                     result.add(Arrays.asList(nums[k], nums[i], nums[j]));
                     while(i<j && nums[i]==nums[i+1]) i++;
-                    while(i<j && nums[j]==nums[j-1]) j--;
+                    // while(i<j && nums[j]==nums[j-1]) j--;
                     i++;
                     j--;            
 
