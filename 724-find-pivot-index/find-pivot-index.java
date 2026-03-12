@@ -7,21 +7,11 @@ class Solution {
         }
 
         for(int i=0;i<nums.length;i++){
-            if(i==0){
-                if(prefix_sum[nums.length-1]-prefix_sum[i]==0){
-                    return 0;
-                }
-            }
-            else if(i==nums.length){
-                if(prefix_sum[i-1]==0){
-                    return nums.length-1;
-                }
-            }
-            else{
-                if(prefix_sum[i-1]==prefix_sum[nums.length-1]-prefix_sum[i]){
-                    return i;
-                }
-            }
+           int leftSum=i==0 ? 0:prefix_sum[i-1];
+           int rightSum=prefix_sum[nums.length-1]-prefix_sum[i];
+           if(leftSum==rightSum){
+            return i;
+           }
         } 
         return -1;
     }
