@@ -11,12 +11,7 @@ class Solution {
 
         int[] a=new int[nums1.length];
         for(int i=0;i<nums1.length;i++){
-            if(m.containsKey(nums1[i])){
-                a[i]=m.get(nums1[i]);
-            }
-            else{
-                a[i]=-1;
-            }
+            a[i] = m.getOrDefault(nums1[i], -1);
         }
         return a;
     }
