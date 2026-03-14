@@ -6,22 +6,13 @@ class Solution {
             sum=sum+nums[i];
         }
 
-        int i=0;
-        int j=k-1;
-        List<Integer> l=new ArrayList<>();
-        while(j<nums.length){
-            if(j==k-1){
-                l.add(sum);
-            }
-            else{
-                sum=sum-nums[i-1]+nums[j];
-                l.add(sum);
-            }
-            i=i+1;
-            j=j+1;
+        int maxSum=sum;
+        for(int i=k;i<nums.length;i++){
+            sum=sum-nums[i-k]+nums[i];
+            maxSum=Math.max(maxSum,sum);
         }
 
-        double average = (double) Collections.max(l) / k;
+        double average=(double)maxSum/k;
         return average;
         
     }
